@@ -1001,59 +1001,6 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "Glide",
-	Callback = function()
-        wait()
-        local outfit = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
-        outfit.Name = "Glide"
-        outfit.RequiresHandle = false
-        local player = game.Players.LocalPlayer
-        while true do
-            wait()
-            if player.Character then
-                break
-            end
-        end
-        local Animation = Instance.new("Animation")
-        Animation.AnimationId = "rbxassetid://3084858603"
-        local char = player.Character
-        local Humanoid = char:WaitForChild("Humanoid")
-        local tool = outfit
-        local u1 = false
-        local u3 = false
-        local u4 = Humanoid:LoadAnimation(Animation)
-        tool.Equipped:connect(function(p1)
-            p1.Button1Down:connect(function()
-                if u1 or Humanoid.FloorMaterial ~= Enum.Material.Air then
-                    return
-                end
-                u1 = true
-                u3 = true
-                u4:Play()
-                local v5 = Instance.new("BodyVelocity", char.HumanoidRootPart)
-                v5.MaxForce = Vector3.new(50000, 50000, 50000)
-                v5.Velocity = (char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(-18), 0, 0)).lookVector * 40
-                while u3 and Humanoid.FloorMaterial == Enum.Material.Air do
-                    v5.Velocity = (char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(-18), 0, 0)).lookVector * 40
-                    game:GetService("RunService").Heartbeat:wait()
-                end
-                v5:Destroy()
-                u3 = false
-                u4:Stop()
-                wait(0.3)
-                u1 = false
-            end)
-            p1.Button1Up:connect(function()
-                u3 = false
-            end)
-        end)
-        tool.Unequipped:connect(function()
-            u3 = false
-        end)
-  	end    
-})
-
-Tab:AddButton({
 	Name = "Hearing",
 	Callback = function()
         function Hearing()
