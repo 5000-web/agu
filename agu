@@ -8882,6 +8882,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Legit SilentAim",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/freshlocaliar2mgiadawdpaklsd/Cool/main/Hydra", true))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Green Dot",
 	Callback = function()
         local function callback(Text)
