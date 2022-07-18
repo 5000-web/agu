@@ -814,7 +814,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Rejoin",
 	Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/STcd1Znj"))()
+        game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
   	end    
 })
 
@@ -839,9 +839,23 @@ local Section = Tab:AddSection({
 
 
 Tab:AddButton({
+	Name = "Admin Fly (Requires swag group)",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/22kristina/swag/main/admin_fly"))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Telekinesis",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/dawn-spec/dimagbbbbb/main/wow.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Titan (Requires max strenght)",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Kazacstan/da-hood-scripts/main/titan", true))()
   	end    
 })
 
