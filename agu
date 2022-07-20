@@ -9692,6 +9692,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "TechWare",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/definitelyseann/lua-projects/main/crash.lua", true))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "GS21",
 	Callback = function()
         getgenv().Active = true --Toggle true or false
